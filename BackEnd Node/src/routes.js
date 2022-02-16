@@ -4,8 +4,6 @@ import { PrismaClient } from "@prisma/client";
 const router = Router();
 const prisma = new PrismaClient();
 
-const allToDos = [{ name: "aaa", status: false }];
-
 //C
 router.post("/todos", async (request, response) => {
   const { name } = request.body;
@@ -32,6 +30,11 @@ router.put("/todos", async (request, response) => {
     return response.status(400).json("Id is mandatory");
   }
 
+  const toDoAlreadyExist = await prisma.todo.findUnique({ where: { id } });
+  if (!toDoAlreadyExist) {
+    return response.status(404).json("To Do not exist");
+  }
+
   const updateToDo = await prisma.todo.update({
     where: {
       id,
@@ -46,5 +49,25 @@ router.put("/todos", async (request, response) => {
 });
 
 //D
+router.delete("/todos/:id", async (request, response) => {
+  const { id } = request.params;
+
+  //garantir que é um number
+  const intId = parseInt(id);
+
+  if (!intId) {
+    return response.status(400).json("Id is mandatory");
+  }
+
+  const toDoAlreadyExist = await prisma.todo.findUnique({
+    where: { id: intId },
+  });
+  if (!toDoAlreadyExist) {
+    return response.status(404).json("To Do not exist");
+  }
+
+  await prisma.todo.delete({ where: { id: intId } });
+  return response.status(200).send();
+});
 
 export { router };
