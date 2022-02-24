@@ -1,5 +1,12 @@
 import { Router } from "express";
-import { PrismaClient } from "@prisma/client";
+
+/* Se o projeto não for em Typescript
+SyntaxError: The requested module '@prisma/client' does not provide an export named 'PrismaClient'
+This error is not related to Prisma. 
+As you can read here , import statement is not yet supported in NodeJS by default. */
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const { PrismaClient } = require("@prisma/client");
 
 const router = Router();
 const prisma = new PrismaClient();
@@ -17,7 +24,7 @@ router.post("/todos", async (request, response) => {
 });
 
 //R
-router.get("/todos", (request, response) => {
+router.get("/todos", async (request, response) => {
   const getAllToDos = await prisma.todo.findMany();
   return response.status(200).json(getAllToDos);
 });

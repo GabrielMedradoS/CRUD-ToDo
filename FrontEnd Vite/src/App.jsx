@@ -1,10 +1,8 @@
 import "./App.css";
-import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 
-const arrayTodos = [
-  { name: "Limpar a casa", status: true },
-  { name: "Limpar o cachorro", status: false },
-];
+import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Todos = ({ todos }) => {
   return (
@@ -31,15 +29,36 @@ const Todos = ({ todos }) => {
 };
 
 function App() {
+  async function getTodos() {
+    const response = await axios.get("http://localhost:3333/todos");
+    setTodos(response.data);
+  }
+
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+  const [inputVisibility, setInputVisibility] = useState(false);
+
+  useEffect(() => {
+    getTodos();
+  }, []);
+
   return (
     <div className="App">
       <header className="container">
         <div className="header">
           <h1>Dont be lazy</h1>
         </div>
-        <div className="todosDiv">
-          <Todos todos={arrayTodos}></Todos>
-        </div>
+        <Todos todos={todos}></Todos>
+        <input
+          style={{ display: inputVisibility ? "block" : "none" }}
+          value={inputValue}
+          onChange={(event) => {
+            setInputValue(event.target.value);
+          }}
+          type="text"
+          className="inputName"
+        />
+        <button className="newTaskButton">+ New Task</button>
       </header>
     </div>
   );
