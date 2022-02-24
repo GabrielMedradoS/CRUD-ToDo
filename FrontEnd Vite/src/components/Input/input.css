@@ -1,0 +1,11 @@
+.inputName {
+  margin-top: 10px;
+  text-align: center;
+  border: none;
+  height: 50px;
+  width: 200px;
+  box-shadow: 0px 0px 21px -7px rgba(0, 0, 0, 0.3);
+}
+input:focus {
+  outline: none;
+}

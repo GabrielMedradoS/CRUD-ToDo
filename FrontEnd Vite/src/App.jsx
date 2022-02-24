@@ -1,4 +1,4 @@
-import "./App.css";
+import "./Global.css";
 
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import { useEffect, useState } from "react";
@@ -10,7 +10,7 @@ function App() {
       <div className="todosDiv">
         {todos.map((todo) => {
           return (
-            <div className="todo">
+            <div key={todo.id} className="todo">
               <button
                 onClick={() => modifyStatusTodo(todo)}
                 className="checkbox"
