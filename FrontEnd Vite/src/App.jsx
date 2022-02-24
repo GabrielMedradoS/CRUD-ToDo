@@ -47,8 +47,8 @@ function App() {
     setInputVisibility(true);
   }
 
-  async function editTodo(todo) {
-    const response = await axios.put("http://localhost:3333/todos", {
+  async function editTodo() {
+    await axios.put("http://localhost:3333/todos", {
       id: selectedTodo.id,
       name: inputValue,
     });
@@ -64,7 +64,7 @@ function App() {
   }
 
   async function createTodo() {
-    const response = await axios.post("http://localhost:3333/todos", {
+    await axios.post("http://localhost:3333/todos", {
       name: inputValue,
     });
     getTodos();
@@ -73,7 +73,7 @@ function App() {
   }
 
   async function modifyStatusTodo(todo) {
-    const response = await axios.put("http://localhost:3333/todos", {
+    await axios.put("http://localhost:3333/todos", {
       id: todo.id,
       status: !todo.status,
     });
