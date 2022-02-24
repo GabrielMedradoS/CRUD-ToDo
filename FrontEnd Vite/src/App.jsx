@@ -12,12 +12,17 @@ function App() {
           return (
             <div className="todo">
               <button
+                onClick={() => modifyStatusTodo(todo)}
                 className="checkbox"
                 style={{ backgroundColor: todo.status ? "#A879E6" : "white" }}
               ></button>
               <p>{todo.name}</p>
               <button>
-                <AiOutlineEdit size={20} color={"#64697b"} />
+                <AiOutlineEdit
+                  onClick={() => handleWithEditButtonClick(todo)}
+                  size={20}
+                  color={"#64697b"}
+                />
               </button>
               <button>
                 <AiOutlineDelete
@@ -37,6 +42,22 @@ function App() {
     setInputVisibility(!inputVisibility);
   }
 
+  async function handleWithEditButtonClick(todo) {
+    setSelectedTodo(todo);
+    setInputVisibility(true);
+  }
+
+  async function editTodo(todo) {
+    const response = await axios.put("http://localhost:3333/todos", {
+      id: selectedTodo.id,
+      name: inputValue,
+    });
+    setSelectedTodo();
+    setInputVisibility(false);
+    getTodos();
+    setInputValue("");
+  }
+
   async function getTodos() {
     const response = await axios.get("http://localhost:3333/todos");
     setTodos(response.data);
@@ -48,6 +69,15 @@ function App() {
     });
     getTodos();
     setInputVisibility(!inputVisibility);
+    setInputValue("");
+  }
+
+  async function modifyStatusTodo(todo) {
+    const response = await axios.put("http://localhost:3333/todos", {
+      id: todo.id,
+      status: !todo.status,
+    });
+    getTodos();
   }
 
   async function deleteTodo(todo) {
@@ -58,6 +88,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [inputVisibility, setInputVisibility] = useState(false);
+  const [selectedTodo, setSelectedTodo] = useState();
 
   useEffect(() => {
     getTodos();
@@ -80,7 +111,13 @@ function App() {
           className="inputName"
         />
         <button
-          onClick={inputVisibility ? createTodo : handleWitthNewButton}
+          onClick={
+            inputVisibility
+              ? selectedTodo
+                ? editTodo
+                : createTodo
+              : handleWitthNewButton
+          }
           className="newTaskButton"
         >
           {inputVisibility ? "Confirm" : "+ New Task"}
