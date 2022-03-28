@@ -1,4 +1,4 @@
-## CRUD - To do
+## Dont be lazy
 
 ### Layout 🚧
 <div>
