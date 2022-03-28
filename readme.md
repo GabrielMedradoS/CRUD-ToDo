@@ -1,13 +1,13 @@
 ## Dont be lazy
 
 <p align="center">
-    <img alt="Platform" src="https://img.shields.io/static/v1?label=Platform&message=PC&color=blue&labelColor=white">
+    <img alt="Platform" src="https://img.shields.io/static/v1?label=Platform&message=PC&color=a879e6&labelColor=white">
     <a href="">
-        <img src="https://img.shields.io/badge/Dont be lazy-ToDo-blue?&labelColor=white"></img>
+        <img src="https://img.shields.io/badge/Dont be lazy-ToDo-a879e6?&labelColor=white"></img>
     </a>
-    <img alt="Repository size" src="https://img.shields.io/github/repo-size/GabrielMedradoS/CRUD-ToDo?color=blue&labelColor=white">
+    <img alt="Repository size" src="https://img.shields.io/github/repo-size/GabrielMedradoS/CRUD-ToDo?color=a879e6&labelColor=white">
     <a href="https://github.com/GabrielMedradoS/CRUD-ToDo/blob/master/License">
-        <img alt="License" src="https://img.shields.io/static/v1?label=License&message=MIT&color=blue&labelColor=white">
+        <img alt="License" src="https://img.shields.io/static/v1?label=License&message=MIT&color=a879e6&labelColor=white">
     </a>
 </p>
 
