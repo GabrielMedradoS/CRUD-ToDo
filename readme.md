@@ -13,7 +13,11 @@
 
 ##  Projeto 💻
 
-Projeto é um To do list onde voce pode criar deleter editar marcar tarefas
+Projeto é um To do list onde voce pode:
+- criar 
+- deleter 
+- editar 
+- marcar tarefas 
 
 ## Rodar o projeto 🚴🏻‍♂️
 
