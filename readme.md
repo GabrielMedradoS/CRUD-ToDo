@@ -28,7 +28,11 @@ Projeto é um To do list onde voce pode:
   
 ```json
   "dependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "@prisma/client": "^3.9.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "prisma": "^3.9.2"
   }
 ```
 </details>
