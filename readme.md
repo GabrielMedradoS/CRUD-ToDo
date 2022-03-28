@@ -64,7 +64,7 @@ $ npm run dev
 ```
 
 ## Tecnologias 🛠
-
+Estudando o docker para ter o primeiro contato com a ferramenta
 - docker Postgresql para o back end
 
 <div>
