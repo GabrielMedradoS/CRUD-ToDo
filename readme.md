@@ -12,6 +12,7 @@
 </p>
 
 ### Layout 🚧
+
 <div>
   <img src=".github/CRUD.png" alt="" width="100%">
 </div>
@@ -22,18 +23,21 @@
     <a href="#licença-%EF%B8%8F">Licença</a>
 </p>
 
-##  Projeto 💻
+## Projeto 💻
 
 Projeto é um To do list onde voce pode:
-- criar 
-- deleter 
-- editar 
-- marcar tarefas 
+
+- criar
+- deleter
+- editar
+- marcar tarefas
 
 ## Rodar o projeto 🚴🏻‍♂️
 
 #### On your machine:
+
 ##### Backend
+
 <details>
   <summary>Dependencies</summary>
   
@@ -48,7 +52,24 @@ Projeto é um To do list onde voce pode:
 ```
 </details>
 
+```bash
+# Clone the repository
+$ git clone https://github.com/GabrielMedradoS/CRUD-ToDo.git
+
+# Access the project folder at the command prompt
+$ cd CRUD-ToDo/BackEnd \Node
+
+# Install the dependencies
+$ npm install
+
+# Run the script "start"
+$ npm run dev
+
+# The project will start at the door: 3333 - access http://localhost:3333
+```
+
 ##### Fronted
+
 <details>
   <summary>Dependencies</summary>
 
@@ -60,6 +81,7 @@ Projeto é um To do list onde voce pode:
     "react-icons": "^4.3.1"
   }
 ```
+
 </details>
 
 ```bash
@@ -67,7 +89,7 @@ Projeto é um To do list onde voce pode:
 $ git clone https://github.com/GabrielMedradoS/CRUD-ToDo.git
 
 # Access the project folder at the command prompt
-$ cd CRUD-ToDo
+$ cd CRUD-ToDo/FrontEnd \Vite
 
 # Install the dependencies
 $ npm install
@@ -79,7 +101,9 @@ $ npm run dev
 ```
 
 ## Tecnologias 🛠
+
 Estudando o docker para ter o primeiro contato com a ferramenta
+
 - docker Postgresql para o back end
 
 <div>
@@ -90,12 +114,13 @@ Estudando o docker para ter o primeiro contato com a ferramenta
 </div>
 
 ## Licença ⚖️
+
 This project is under the MIT license. See the archive [LICENSE](https://github.com/GabrielMedradoS/CRUD-ToDo/blob/master/License) for more details.
 
 ## Autor ✍🏾
 
-| <a  href="https://github.com/gabrielmedrados/"><img src="https://user-images.githubusercontent.com/73303001/126536001-655e3cbd-facd-4de1-992f-b8d9d3656ace.jpg" width="100" alt="perfil"/><br><sub>Gabriel Medrado</sub></a>|
-| :---: |
- 
+| <a  href="https://github.com/gabrielmedrados/"><img src="https://user-images.githubusercontent.com/73303001/126536001-655e3cbd-facd-4de1-992f-b8d9d3656ace.jpg" width="100" alt="perfil"/><br><sub>Gabriel Medrado</sub></a> |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+
 [![Linkedin Badge](https://img.shields.io/badge/-GabrielMedrado-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-medrado-de-souza-9a30b3206/)
 [![Gmail Badge](https://img.shields.io/badge/-gabriel.medradoo@hotmail.com-1769ff?style=flat-square&logo=Gmail&logoColor=white)](mailto:gabriel.medradoo@hotmail.com)
