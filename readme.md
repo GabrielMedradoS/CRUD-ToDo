@@ -14,7 +14,7 @@
 ### Layout 🚧
 
 <div>
-  <img src=".github/CRUD.png" alt="" width="100%">
+  <img src=".github/github image.png" alt="" width="100%">
 </div>
 <p align="center">
     <a href="#projeto-">Projeto</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
